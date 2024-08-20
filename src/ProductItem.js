@@ -35,7 +35,6 @@ const ProductItem = ({ product }) => {
             </div>
           </div>
         </div>
-      
     </li>
   );
 };

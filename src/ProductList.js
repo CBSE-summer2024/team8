@@ -13,7 +13,7 @@ const ProductList = () => {
           title: product.title,
           price: `${product.price} ₪`,
            image: product.thumbnail,
-          url: `/product/${product.id}`,   
+          url: product.id,   
           productRef: product.id.toString(),
           discount: product.discountPercentage ? `Discount: ${product.discountPercentage}%` : "",
         }));
