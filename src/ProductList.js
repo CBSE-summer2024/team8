@@ -12,9 +12,9 @@ const ProductList = () => {
           id: product.id,
           title: product.title,
           price: `${product.price} ₪`,
-          oldPrice: product.oldPrice ? `${product.oldPrice} ₪` : "",
+          // oldPrice: product.oldPrice ? `${product.oldPrice} ₪` : "",
           image: product.thumbnail,
-          url: `/product/${product.id}`, // Assuming you have routes set up
+          url: `/product/${product.id}`,   
           productRef: product.id.toString(),
           discount: product.discountPercentage ? `Discount: ${product.discountPercentage}%` : "",
         }));
