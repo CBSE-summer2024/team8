@@ -20,11 +20,8 @@ const ProductItem = ({ product }) => {
             </div>
           </div>
           <div className="right-block">
-            <div className="content_price" itemProp="offers" itemScope itemType="http://schema.org/Offer">
-              <span className="old-price product-price" style={{ fontFamily: "monospace !important" }}>
-                {product.oldPrice}
-              </span>
-              <span className="price product-price">{product.price}</span>
+              
+               <span className="price product-price">{product.price}</span>
               <meta itemProp="price" content={product.price} />
               <meta itemProp="priceCurrency" content="ILS" />
             </div>
@@ -38,7 +35,7 @@ const ProductItem = ({ product }) => {
             </div>
           </div>
         </div>
-      </div>
+      
     </li>
   );
 };
