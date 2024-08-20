@@ -2,8 +2,8 @@ import React from "react";
 
 const ProductItem = ({ product }) => {
   return (
-    <li className="ajax_block_product col-xs-12 col-sm-4 col-md-3 first-in-line first-item-of-tablet-line first-item-of-mobile-line">
-      <div className="custom-product-container">
+<li className="product-item">
+<div className="custom-product-container">
         <div className="product-container" itemScope itemType="http://schema.org/Product">
           <div className="left-block">
             <div className="product-image-container">
