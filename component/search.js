@@ -14,9 +14,13 @@ export class searchElement extends LitElement {
         this.shadowRoot.innerHTML=`
 
         <link rel="stylesheet" href="/component/search.css"/>
+
+       
+
         <ion-icon name="search" class ="icon" ></ion-icon>
 
         <input class="input " type ="search " placeholder="seach for id , product name"/>
+
 
 
         `;
