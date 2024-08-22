@@ -2,12 +2,11 @@
 .dropdown:hover .dropdown-menu {
   display: flex; /* عرض القائمة عند مرور المؤشر */
 }
-.dropdown-menu li:first-child a{
+.dropdown-menu-hadi li {
   font-weight:bold;
 font-size: 1.2em;
 
 }
-
 
 .dropdown-submenu:hover > .dropdown-menu {
     top: 0;
@@ -18,3 +17,70 @@ font-size: 1.2em;
   list-style: none;
   padding: 0%;
 }
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  margin-bottom: 10px; /* مسافة بين كل عنصر */
+}
+.dropdown-menu {
+  left: 100%;
+  top: 0;
+  transform: translateX(0);
+  margin-left: 0;
+}
+/* حاوية للقوائم المنسدلة */
+.dropdown-container {
+  display: flex;
+  gap: 5px; /* التحكم في المسافة بين القوائم */
+}
+
+/* القوائم المنسدلة لتظهر باتجاه اليمين */
+.nav-item .dropdown-menu {
+  left: 100%;
+  top: 0;
+  transform: translateX(0);
+  margin-left: 0;
+}
+
+/* لضمان تقارب القوائم المنسدلة */
+.nav-item.dropdown {
+  margin: 0;
+}
+/* لجعل النص كبير وغامق مع خط تحت النص */
+.dropdown-item-hadi {
+  font-size: 1.1rem; /* حجم الخط */
+  font-weight: bold; /* جعل النص غامق */
+  color: #000; /* لون النص أسود غامق */
+  border-bottom: 2px  #000; /* خط صغير تحت النص */
+  margin-bottom: 10px; /* مسافة بين العنصر والعناصر الأخرى */
+  padding: 5px 0; /* مسافة حول النص */
+}
+
+/* ترتيب جميل للعناصر */
+ul.list-unstyled {
+  padding-left: 20px; /* تحريك القائمة قليلاً للداخل */
+  margin-bottom: 20px; /* مسافة أسفل القائمة */
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+ul.list-unstyled li {
+  margin-bottom: 10px; /* مسافة بين العناصر */
+}
+
+.dropdown-item {
+  font-size: 1.1rem; /* حجم الخط للعناصر الأخرى */
+  color: #333; /* لون النص للعناصر الأخرى */
+  padding: 5px 10px; /* مسافة حول النص */
+  transition: color 0.3s ease, background-color 0.3s ease; /* انتقال لوني لطيف */
+}
+
+.dropdown-item:hover {
+  color:deepskyblue; /* لون عند التمرير بالماوس */
+  background-color: #f8f9fa; /* لون الخلفية عند التمرير بالماوس */
+}
+
