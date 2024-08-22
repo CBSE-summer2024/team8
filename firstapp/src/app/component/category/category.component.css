@@ -1,0 +1,51 @@
+.dropdown-menu ul{
+  list-style: none;
+  padding: 0%;
+}
+.dropdown:hover .dropdown-menu {
+    display: block; /* عرض القائمة عند مرور المؤشر */
+}
+.dropdown-menu li:first-child a{
+  font-weight:bold;
+font-size: 1em;
+}
+.dropdown-menu li a{
+  padding: .5em;
+}
+.dropdown-item-man{
+  color: brown;
+}
+.dropdown-item-woman{
+  color: brown;
+}
+.shoe-categories {
+  display: flex;
+  justify-content: space-between; /* توزيع المساحة بالتساوي بين الأعمدة */
+  padding: 10px;
+}
+
+.dropdown-column {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.dropdown-item-man,
+.dropdown-item-woman {
+  font-weight: bold;
+  color: #b80000;
+  text-align: center;
+  display: block;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 5px;
+}
+
+.dropdown-item {
+  text-align: center;
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+
+
