@@ -1,0 +1,17 @@
+@for(post of posts; track post.id){
+
+<div class="card" style="width: 18rem;">
+  <img src="{{post.images[0]}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{post.id}}</h5>
+    <p class="card-text">{{post.title}}</p>
+    <p class="card-text">{{post.description}}</p>
+    <p class="card-price">{{post.price}}</p>
+    <p class="card-price">{{post.category}}</p>
+
+
+
+    <a href="#" class="btn btn-primary">add new</a>
+  </div>
+</div>
+}
