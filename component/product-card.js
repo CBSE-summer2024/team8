@@ -1,6 +1,6 @@
 // product-card.js
 
-// مع صورة وديسكريبشن 
+
 import { LitElement, html, css } from 'lit';
 
 export class ProductCard extends LitElement {
@@ -20,7 +20,8 @@ export class ProductCard extends LitElement {
       margin: 0.5rem 0;
     }
     img {
-       max-width: 30%;
+]
+      max-width: 30%;
       border-radius: 8px;
       height: 150px;/* ارتفاع ثابت للصورة */
       object-fit: cover; /* لضمان أن الصورة تتناسب مع الإطار */
@@ -50,7 +51,6 @@ export class ProductCard extends LitElement {
   static properties = {
     title: { type: String },
     id: { type: String },
-
     category: { type: String },
     brand: { type: String },
     description: { type: String },
@@ -65,7 +65,6 @@ export class ProductCard extends LitElement {
     this.description = '';
     this.imageUrl = '';
     this.id = '';
-
   }
 
   render() {
@@ -73,8 +72,7 @@ export class ProductCard extends LitElement {
       <div class="card ">
         <img src="${this.imageUrl}" alt="${this.title}">
         <div class="id">${this.id}</div>
-
-        <div class="header">${this.title}</div>
+        <div class="header"><strong>${this.title}</strong> </div>
         <div class="brand"><strong>Brand:</strong> ${this.brand}</div>
         <div class="category"><strong>Category:</strong> ${this.category}</div>
         <div class="description">${this.description}</div>
