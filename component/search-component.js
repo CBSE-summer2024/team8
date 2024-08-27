@@ -102,7 +102,6 @@ export class SearchProduct extends LitElement {
 
   handleSearch(event) {
     this.searchTerm = event.target.value.toLowerCase();
-    this.requestUpdate(); // أضف هذا السطر لضمان إعادة التحديث عند تغيير searchTerm
 
   }
 
@@ -124,11 +123,9 @@ export class SearchProduct extends LitElement {
         <div>
         <div class="product-cards">
           ${this.products
-        
           .filter(product =>
             
 
-          
             product.title.toLowerCase().includes(this.searchTerm) ||
 
             product.description.toLowerCase().includes(this.searchTerm) ||
