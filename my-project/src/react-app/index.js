@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const root = createRoot(rootElement);
     root.render(
       <div>
-      <search-product></search-product> {/* تأكد من وضع شريط البحث أولاً */}
-        <ProductList />
+      <search-product></search-product>
+        {/* <ProductList /> */}
       </div>
     );
   } else {

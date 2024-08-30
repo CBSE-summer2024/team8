@@ -1,5 +1,5 @@
-// src/lit-app/search-product.js
 import { LitElement, css, html } from 'lit';
+import { ReactProductItem } from '../react-app/react-wrapper'; // استيراد المكون المغلف من React
 
 export class SearchProduct extends LitElement {
   static styles = css`
@@ -7,7 +7,6 @@ export class SearchProduct extends LitElement {
       position: sticky;
       top: 0;
       z-index: 1000;
-      margin-bottom:100px;
     }
 
     .search-wrapper {
@@ -18,7 +17,6 @@ export class SearchProduct extends LitElement {
       padding: 14px;
       border-radius: 28px;
       background: #f6f6f6;
-      margin-bottom: 100px;
     }
 
     .search-wrapper:focus-within {
@@ -38,18 +36,27 @@ export class SearchProduct extends LitElement {
     .icon {
       color: dimgray;
     }
+
+    .hide {
+      display: none;
+    }
+
+    .product-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-top: 20px;
+    }
   `;
 
   static properties = {
     products: { type: Array },
     searchTerm: { type: String },
-    filteredProducts: { type: Array },
   };
 
   constructor() {
     super();
     this.products = [];
-    this.filteredProducts = [];
     this.searchTerm = '';
   }
 
@@ -57,35 +64,34 @@ export class SearchProduct extends LitElement {
     super.connectedCallback();
     this.fetchProducts();
   }
-
   fetchProducts() {
-    // جلب المنتجات من API
-    fetch('https://dummyjson.com/products')
-      .then(res => res.json())
-      .then(data => {
-        this.products = data.products.map(product => ({
-          id: product.id,
+    if (!this.products) {
+      console.error("Products data not available. Please ensure 'products' is defined before calling fetchProducts().");
+      return; // Exit if products are not available
+    }
+  
+    fetch(`https://dummyjson.com/products`)
+      .then((res) => res.json())
+      .then((data) => {
+        this.products = data.products.map((product) => ({
           title: product.title,
-          price: `${product.price} ₪`,
-          image: product.thumbnail,
-          url: product.id,
-          productRef: product.id.toString(),
-          discount: product.discountPercentage ? `Discount: ${product.discountPercentage}%` : '',
-          description: product.description,
           category: product.category,
+          brand: product.brand,
+          description: product.description,
+          image: product.thumbnail,
+          price: product.price,
+          discount: product.discountPercentage ? `${product.discountPercentage}% OFF` : '',
+          url: product.url || '#',
         }));
-        this.filteredProducts = this.products; // عرض كل المنتجات في البداية
+        console.log("Fetched products:", this.products); // Add this line to inspect the data
+        this.requestUpdate(); // تأكد من تحديث التصيير
       })
       .catch(error => console.error('Error fetching products:', error));
   }
+  
 
   handleSearch(event) {
     this.searchTerm = event.target.value.toLowerCase();
-    this.filteredProducts = this.products.filter(product =>
-      product.title.toLowerCase().includes(this.searchTerm) ||
-      product.description.toLowerCase().includes(this.searchTerm) ||
-      product.category.toLowerCase().includes(this.searchTerm)
-    );
   }
 
   render() {
@@ -103,9 +109,23 @@ export class SearchProduct extends LitElement {
             />
           </div>
         </div>
-
-        <!-- تضمين مكون React وتمرير المنتجات المفلترة -->
-        <react-product-list .products="${this.filteredProducts}"></react-product-list>
+        <div class="product-cards">
+          ${this.products
+            .filter(
+              (product) => {
+                console.log('Product:', product);
+                return (
+                  (product.title && product.title.toLowerCase().includes(this.searchTerm)) ||
+                  (product.description && product.description.toLowerCase().includes(this.searchTerm)) ||
+                  (product.category && product.category.toLowerCase().includes(this.searchTerm))
+                );
+              } )
+            .map(
+              (product) => html`
+                <react-product-item .product="${product}"></react-product-item>
+              `
+            )}
+        </div>
       </div>
     `;
   }

@@ -1,35 +1,28 @@
-// // src/react-app/react-wrapper.js
+
 // import React from 'react';
 // import { createRoot } from 'react-dom/client';
-// import { createComponent } from '@lit/react';
-// import ProductList from './ProductList';
-
-// // الدالة التي تقوم بتضمين مكون React داخل Lit
-// export const ReactProductList = createComponent(React, 'react-product-list', ProductList, {
-//   products: []
-// });
-
-
-// import React from 'react';
-// import { createComponent } from '@lit/react';
+// import ReactToWebComponent from 'react-to-webcomponent';
 // import ProductItem from './ProductItem';
 
-// // التحقق من صحة المكون
-// console.log(ProductItem);
+// // تحويل المكون إلى Web Component باستخدام createRoot
+// const ReactProductItem = ReactToWebComponent(ProductItem, React, createRoot);
 
-// export const ReactProductItem = createComponent(React, 'react-product-item', ProductItem, {
-//   product: { type: Object }, // تعريف النوع بشكل واضح
-// });
-
+// customElements.define('react-product-item', ReactProductItem);
 import React from 'react';
-import { createComponent } from '@lit/react';
+import { createRoot } from 'react-dom/client';
 import ProductItem from './ProductItem';
 
-// التحقق من أن ProductItem تم تعريفه بشكل صحيح
-if (!ProductItem) {
-  console.error('ProductItem is not defined correctly');
+class ReactProductItem extends HTMLElement {
+  constructor() {
+    super();
+    this._root = null;
+  }
+  connectedCallback() {
+    if (!this._root) {
+      this._root = createRoot(this.attachShadow({ mode: 'open' }));
+      this._root.render(<ProductItem />);
+    }
+  }
 }
 
-export const ReactProductItem = createComponent(React, 'react-product-item', ProductItem, {
-  product: 'product',
-});
+customElements.define('react-product-item', ReactProductItem);

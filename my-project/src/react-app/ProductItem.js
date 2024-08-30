@@ -1,6 +1,11 @@
 import React from 'react';
 
+
 const ProductItem = ({ product }) => {
+  console.log("Received product:", product);
+  if (!product) {
+    return <div>No product data</div>;
+  }
   return (
     <li className="product-item">
       <div className="custom-product-container">
