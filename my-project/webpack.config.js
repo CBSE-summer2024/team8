@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development', // Set mode to 'development' or 'production'
   entry: {
-    'react-app': './src/react-app/index.js',
     'lit-app': './src/lit-app/index.js',
+    'react-app': './src/react-app/index.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -16,6 +16,8 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        use: 'ts-loader',
+
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -36,10 +38,20 @@ module.exports = {
       filename: 'index.html',
     }),
   ],
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 8080,
-    publicPath: '/dist/',
+  
+  
+    devServer: {
+      static: {
+        directory: path.join(__dirname, 'dist'),
+      },
+      compress: true,
+      port: 8080,
+      open: true,
+    },
+
+
+  resolve: {
+    extensions: ['.js', '.ts', '.jsx', '.tsx'],
   },
+  
 };

@@ -1,5 +1,22 @@
+
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import ProductList from './ProductList';
-import './styles.css';  
-ReactDOM.render(<ProductList />, document.getElementById('root'));
+import './styles.css'; 
+
+// Ensure the DOM is fully loaded before trying to mount React
+document.addEventListener('DOMContentLoaded', () => {
+  const rootElement = document.getElementById('root');
+
+  if (rootElement) {
+    const root = createRoot(rootElement);
+    root.render(
+      <div>
+      <search-product></search-product> {/* تأكد من وضع شريط البحث أولاً */}
+        <ProductList />
+      </div>
+    );
+  } else {
+    console.error("Root element not found");
+  }
+});

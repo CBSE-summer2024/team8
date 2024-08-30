@@ -16,6 +16,9 @@ const ProductList = () => {
           url: product.id,
           productRef: product.id.toString(),
           discount: product.discountPercentage ? `Discount: ${product.discountPercentage}%` : '',
+        
+          description: product.description,
+          category: product.category,
         }));
         setProducts(formattedProducts);
       })
