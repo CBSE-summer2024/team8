@@ -1,0 +1,21 @@
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.card {
+  margin-bottom: 20px; /* Adjust spacing between cards */
+}
+
+.col-md-3 {
+  padding-right: 15px; /* Ensure some spacing inside the categories column */
+}
+
+.col-md-9 {
+  padding-left: 15px; /* Ensure some spacing inside the products column */
+}
+
+/* Ensure that dropdowns open without affecting the layout */
+.dropdown-menu {
+  position: absolute;
+}
