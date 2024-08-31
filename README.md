@@ -188,6 +188,8 @@ Deployment Tools:
 GitHub Actions:
 Purpose: Provides CI/CD workflows directly within GitHub repositories.
 Features: Automated testing, building, and deployment pipelines with YAML configuration. Integrates with GitHub repositories and other services.
+![Project Screenshot](![Screenshot 2024-08-31 233532](https://github.com/user-attachments/assets/3bc93d7d-bcc7-4a4c-8e45-a440cbf189ef))
+
 ![image](https://github.com/user-attachments/assets/064e877b-1ee3-4351-aaf8-8a9c71682dc9)
 ![image](https://github.com/user-attachments/assets/7765d478-841c-479d-8b3f-28ce2e2cff1e)
 
