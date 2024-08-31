@@ -8,6 +8,8 @@ module.exports = {
     'react-app': './src/react-app/index.js',
     'lit-app': './src/lit-app/index.js',
     'angular-app': './src/angular-app/index.js',
+    'vue-app': './src/vue-app/index.js',
+
   },
   output: {
     filename: '[name].bundle.js',
@@ -37,6 +39,11 @@ module.exports = {
         test: /\.wasm$/,
         type: 'webassembly/async',
       },
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      }
     ],
   },
   plugins: [

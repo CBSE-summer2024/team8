@@ -1,6 +1,7 @@
 
 // import {CategComponent} from './app4/src/app/categ/categ.component'
 // import   { ProductComponent} from './app4/src/app/product/product.component'
+import React from 'react';
 
 
 <div class="container-fluid">

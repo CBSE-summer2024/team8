@@ -1,6 +1,5 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import { ProductComponent } from './app/product/product.component'; // تأكد من الإستيراد الصحيح
 
-bootstrapApplication(AppComponent, appConfig)
+bootstrapApplication(ProductComponent) // تمهيد مكون المنتج كنقطة انطلاق
   .catch((err) => console.error(err));
