@@ -1,0 +1,26 @@
+
+  .btn{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  
+  }
+
+.standard-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;  
+    font-family: Arial, sans-serif;
+
+
+  }
+  
+  .standard-button.default {
+    background-color: #b3b3b3;
+    color: #333;
+  }
+  .standard-button.is-disabled {
+    cursor: not-allowed;
+    background-color: #aaa;
+  }

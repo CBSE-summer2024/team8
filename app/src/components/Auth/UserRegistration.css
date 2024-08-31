@@ -1,0 +1,37 @@
+.registration-container {
+    max-width: 400px;
+    margin-bottom:70px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+
+  }
+  
+  h4 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  p{
+   display: flex;
+    justify-content: center; 
+    align-items: center;
+    font-size: 14px;
+
+  }
+  
+  .link{
+    font-size: 13px;
+    color: #b3b3b3;
+    text-decoration: none;
+  }
+  .logo {
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px; 
+    height: auto; 
+    margin: 20px auto;
+  }
