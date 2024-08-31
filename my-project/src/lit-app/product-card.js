@@ -44,6 +44,31 @@ export class ProductCard extends LitElement {
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 16px;
+      color: #e60023;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .rating {
+      font-size: 14px;
+      color: #ff9900;
+      margin-bottom: 8px;
+    }
+
+    .section {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+
+    .brand, .category {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 4px;
     }
   `;
 
@@ -54,6 +79,8 @@ export class ProductCard extends LitElement {
     brand: { type: String },
     description: { type: String },
     imageUrl: { type: String },
+    price: { type: String },
+    rating: { type: Number },
   };
 
   constructor() {
@@ -64,16 +91,23 @@ export class ProductCard extends LitElement {
     this.description = '';
     this.imageUrl = '';
     this.id = '';
+    this.price = '';
+    this.rating = 0;
   }
 
   render() {
     return html`
       <div class="card">
         <img src="${this.imageUrl}" alt="${this.title}">
-        <div class="id">${this.id}</div>
-        <div class="header"><strong>${this.title}</strong></div>
-        <div class="brand"><strong>Brand:</strong> ${this.brand}</div>
-        <div class="category"><strong>Category:</strong> ${this.category}</div>
+        <div class="title">${this.title}</div>
+        <div class="section">
+          <div class="price">${this.price}</div>
+          <div class="rating">Rating: ${this.rating}★</div>
+        </div>
+        <div class="section">
+          <div class="brand"><strong>Brand:</strong> ${this.brand}</div>
+          <div class="category"><strong>Category:</strong> ${this.category}</div>
+        </div>
         <div class="description">${this.description}</div>
       </div>
     `;

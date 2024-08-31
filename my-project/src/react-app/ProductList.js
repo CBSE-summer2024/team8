@@ -135,7 +135,7 @@ const ProductList = () => {
 
   return (
     <div>
-      <h1>Product List</h1>
+      <h1>Latset Products</h1>
       <ul className="product-list">
         {products.map(product => (
           <li
