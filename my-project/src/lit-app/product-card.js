@@ -4,26 +4,36 @@ export class ProductCard extends LitElement {
   static styles = css`
     .card {
       padding: 1rem;
-      border: 1px solid #ccc;
+      border: 1px solid #ddd;
       border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: column;
       align-items: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
     }
 
     img {
-      max-width: 30%;
-      border-radius: 8px;
-      height: 150px;
+      max-width: 100%;
+      height: auto;
+      max-height: 200px;
       object-fit: cover;
+      border-radius: 8px;
       margin-bottom: 8px;
     }
 
     .title {
       font-size: 18px;
+      color: #333;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      margin-bottom: 8px;
     }
 
     .description {

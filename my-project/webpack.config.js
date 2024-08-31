@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     'react-app': './src/react-app/index.js',
     'lit-app': './src/lit-app/index.js',
+      
   },
   output: {
     filename: '[name].bundle.js',

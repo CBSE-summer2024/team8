@@ -4,9 +4,12 @@ import './product-card.js';
 export class SearchProduct extends LitElement {
   static styles = css`
     .search-wrapper-container {
-      position: sticky;
-      top: 0;
+       top: 0;
       z-index: 1000;
+      background: #fff;
+      padding: 10px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid #ddd;
     }
 
     .search-wrapper {
@@ -24,7 +27,7 @@ export class SearchProduct extends LitElement {
     }
 
     .input {
-      font-family: 'Lexend', sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 16px;
       color: #333333;
       outline: none;
@@ -40,7 +43,7 @@ export class SearchProduct extends LitElement {
     .product-cards {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1rem;
+      gap: 20px;
       margin-top: 20px;
     }
   `;

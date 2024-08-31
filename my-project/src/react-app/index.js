@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ProductList from './ProductList';
-import './styles.css';  
-ReactDOM.render(<ProductList />, document.getElementById('root'));
+import App from './App'; // Ensure this path is correct
+
+ReactDOM.render(<App />, document.getElementById('root'));
