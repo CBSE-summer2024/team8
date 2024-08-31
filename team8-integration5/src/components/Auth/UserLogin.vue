@@ -1,0 +1,91 @@
+<template>
+  <div class="login-container">
+     <img src="@/assets/logo.png" alt="Logo" class="logo" />
+    <h5>Log in to your account </h5>
+    <form @submit.prevent="login">
+      <input-field
+        v-model="email"
+        type="email"
+        placeholder="Enter your Email"
+        error-message="Invalid email "
+      />
+      <input-field
+        v-model="password"
+        type="password"
+        placeholder="Enter your Password"
+        error-message="Password is required"
+      />
+     <StandardButton :disabled="!isFormValid" @click="login">Log in</StandardButton>
+    </form>
+     <p>
+      Don't have an account?
+      <router-link class="link" to="/RegistrationPage">Register new account </router-link>
+    </p>
+  </div>
+</template>
+
+<script>
+import InputField from '@/components/Shared/InputField.vue';
+import StandardButton from '@/components/Shared/StandardButton.vue';
+import { mapActions } from 'vuex';
+
+export default {
+  components: {
+    InputField,
+    StandardButton
+  },
+  data() {
+    return {
+      email: '',
+      password: ''
+    };
+  },
+  computed: {
+    isFormValid() {
+      return this.email && this.password;
+    }
+  },
+  methods: {
+    ...mapActions(['login']),
+    login() {
+      this.$store.dispatch('login', { email: this.email, password: this.password })
+        .then(() => {
+          this.$router.push('/HomePage');
+        })
+        .catch(error => {
+          console.error('Login failed:', error);
+        });
+    }
+  }
+};
+</script>
+
+<style scoped>
+.login-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h5 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.link{
+  font-size: 14px;
+  color: #b3b3b3;
+    text-decoration: none;
+}
+
+.logo {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px; 
+  height: auto; 
+  margin: 20px auto;
+}
+</style>
