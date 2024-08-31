@@ -1,29 +1,4 @@
-// // src/react-app/Modal.js
-// import React from 'react';
-// import './styles.css'; // Ensure this path is correct for global styles
 
-// const Modal = ({ product, onClose, onAddToCart }) => {
-//   if (!product) return null;
-
-//   return (
-//     <div className="modal">
-//       <div className="modal-content">
-//         <span className="close-button" onClick={onClose}>&times;</span>
-//         <h2>{product.title}</h2>
-//         <img src={product.image} alt={product.title} />
-//         <p>{product.description}</p>
-//         <p>Price: {product.price} ₪</p>
-//         <p><strong>Category:</strong> {product.category}</p>
-//         <p>Discount: {product.discount || 'None'}</p>
-//         <button className="add-to-cart-button" onClick={() => onAddToCart(product)}>Add to Cart</button> {/* Styled Add to Cart button */}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Modal;
-
- // src/react-app/Modal.js
 import React from 'react';
 import './styles.css'; // Ensure this path is correct for global styles
 
