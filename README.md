@@ -165,7 +165,13 @@ Routing and Communication: Set up routing to handle navigation between microfron
   (![Screenshot 2024-08-31 233532](https://github.com/user-attachments/assets/5870c8b5-aaa0-4814-81d9-349ed767c5ca)
   (![Screenshot 2024-08-31 233532](https://github.com/user-attachments/assets/7088871e-84f6-4c59-882d-b4319b168cf6)
   (![Screenshot 2024-08-31 233532](https://github.com/user-attachments/assets/7088871e-84f6-4c59-882d-b4319b168cf6)
-  (![Screenshot 2024-08-31 233532](![456519378_392076990306003_4145267514597144407_n](https://github.com/user-attachments/assets/6fe2cb8b-6bc0-4c39-bcab-466b83cf66d8)
-)
+  (![Screenshot 2024-08-31 233532](https://github.com/user-attachments/assets/6fe2cb8b-6bc0-4c39-bcab-466b83cf66d8)
+  (![Screenshot 2024-08-31 233532](https://github.com/user-attachments/assets/d760d43d-41fe-4a76-8667-ff6fb7e1dd2a)
+  (![Screenshot 2024-08-31 233532](https://github.com/user-attachments/assets/a3b10704-8868-4bb7-be32-19c3cdb2b564)
+  (![Screenshot 2024-08-31 233532](https://github.com/user-attachments/assets/5f9bf5eb-278f-41e9-a351-0fca79feb171)
+
+
+
+
 
 
