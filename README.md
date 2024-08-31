@@ -189,8 +189,7 @@ GitHub Actions:
 Purpose: Provides CI/CD workflows directly within GitHub repositories.
 Features: Automated testing, building, and deployment pipelines with YAML configuration. Integrates with GitHub repositories and other services.
  (![Screenshot 2024-08-31 233532](https://github.com/user-attachments/assets/3bc93d7d-bcc7-4a4c-8e45-a440cbf189ef)
- (![Screenshot 2024-08-31 233532](![Screenshot 2024-08-31 233601](https://github.com/user-attachments/assets/aae338c1-0f67-4193-aa81-686dbe90d548))
-  (![Screenshot 2024-08-31 233532](![Screenshot 2024-08-31 233634](https://github.com/user-attachments/assets/5870c8b5-aaa0-4814-81d9-349ed767c5ca))
-  (![Screenshot 2024-08-31 233532](![Screenshot 2024-08-31 233634](![Screenshot 2024-08-31 233711](https://github.com/user-attachments/assets/7088871e-84f6-4c59-882d-b4319b168cf6)
-))
+ (![Screenshot 2024-08-31 233532] (https://github.com/user-attachments/assets/aae338c1-0f67-4193-aa81-686dbe90d548)
+  (![Screenshot 2024-08-31 233532] (https://github.com/user-attachments/assets/5870c8b5-aaa0-4814-81d9-349ed767c5ca)
+  (![Screenshot 2024-08-31 233532] (https://github.com/user-attachments/assets/7088871e-84f6-4c59-882d-b4319b168cf6)
 
