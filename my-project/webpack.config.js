@@ -1,16 +1,17 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader'); // تأكد من استيراد VueLoaderPlugin بشكل صحيح
 
 module.exports = {
-  mode: 'development', // Set mode to 'development' or 'production'
+  mode: 'development',
   entry: {
     'react-app': './src/react-app/index.js',
     'lit-app': './src/lit-app/index.js',
+    'angular-app': './src/angular-app/index.js',
   },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
   },
   module: {
     rules: [
@@ -28,6 +29,14 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader', // إذا كنت تستخدم Vue، تأكد من وجود هذا اللودر
+      },
+      {
+        test: /\.wasm$/,
+        type: 'webassembly/async',
+      },
     ],
   },
   plugins: [
@@ -35,11 +44,18 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html',
     }),
+    new VueLoaderPlugin(), // تأكد من إضافة VueLoaderPlugin هنا إذا كنت تستخدم Vue
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
     compress: true,
     port: 8080,
-    publicPath: '/dist/',
+    open: true,
+    historyApiFallback: true,
+  },
+  experiments: {
+    asyncWebAssembly: true,
   },
 };
