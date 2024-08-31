@@ -13,7 +13,7 @@ const Modal = ({ product, onClose, onAddToCart }) => {
         <img src={product.image} alt={product.title} />
         <p><strong>Description:</strong> {product.description}</p>
         <p><strong>Category:</strong> {product.category}</p>
-        <p><strong>Price:</strong> {product.price} ₪</p>
+        <p><strong>Price:</strong> {product.price} </p>
         <p><strong>Discount:</strong> {product.discount || 'None'}</p>
         <p><strong>Rating:</strong> {product.rating} / 5</p>
         <p><strong>Tags:</strong> {product.tags.join(', ')}</p>
