@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React and Lit Integration s</title>
+  <script type="module" src="/my-project/dist/lit-app.bundle.js"></script>
+  <script src="/my-project/dist/react-app.bundle.js" defer></script>
+  <link rel="stylesheet" href="/my-project/src/react-app/styles.css">  
+  <script  type="module" src="category/product-component.js" ></script>
+  <script  type="module" src="./category/category-component.js" ></script>
+</head>
+<body>
+  <div id="root"></div> <!-- React Root -->
+  <search-product></search-product> 
+  
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Categories Column -->
+      <div class="col-md-3">
+        <app-categ></app-categ>
+      </div>
+
+      <!-- Products Column -->
+      <div class="col-md-9">
+        <app-product></app-product>
+      </div>
+    </div>
+  </div><!-- Lit component -->
+</body>
+</html>
